@@ -2,7 +2,7 @@ data:extend({
  {
     type = "recipe",
     name = "bullet-bill",
-    enabled = "true",
+    enabled = "false",
     ingredients = 
     {
       {"diesel-locomotive",1},

@@ -2,17 +2,17 @@ data:extend({
   {
     type = "locomotive",
     name = "bullet-bill",
-    icon = "__BulletBillTrain__/graphics/icon_bulletbill.png",
+    icon = "__BulletBillTrain__/graphics/icon_bullet_bill.png",
     flags = {"placeable-neutral", "player-creation", "placeable-off-grid", "not-on-map"},
     minable = {mining_time = 1, result = "bullet-bill"},
-    mined_sound = {filename = "__core__/sound/deconstruct-medium.ogg"},
+    mined_sound = {filename = "__BulletBillTrain__/sound/stop.ogg"},
     max_health = 1000,
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-0.6, -2.6}, {0.6, 2.6}},
     selection_box = {{-0.85, -2.6}, {0.9, 2.5}},
     drawing_box = {{-1, -4}, {1, 3}},
-    weight = 2000,
+    weight = 1000,
     max_speed = 1.2,
     max_power = "600kW",
     braking_force = 10,
@@ -84,28 +84,40 @@ data:extend({
           width = 200,
           height = 200
         },
-        shift = {-0.6, -50},
-        size = 8,
-        intensity = 1.0
-      },
-      {
-        type = "oriented",
-        minimum_darkness = 0.3,
-        picture =
-        {
-          filename = "__core__/graphics/light-cone.png",
-          priority = "medium",
-          scale = 2,
-          width = 200,
-          height = 200
-        },
-        shift = {0.6, -50},
+        shift = {0.0, -50},
         size = 8,
         intensity = 1.0
       }
     },
-    back_light = rolling_stock_back_light(),
-    stand_by_light = rolling_stock_stand_by_light(),
+    back_light = {
+      {
+        minimum_darkness = 0.3,
+        color = {r=1},
+        shift = {0.0, 2.5},
+        size = 2,
+        intensity = 0.6,
+        add_perspective = true
+      }
+    },
+    stand_by_light = 
+    {
+      {
+        minimum_darkness = 0.3,
+        color = {b=1},
+        shift = {-2.5, -1.0},
+        size = 2,
+        intensity = 0.5,
+        add_perspective = true
+      },
+      {
+        minimum_darkness = 0.3,
+        color = {b=1},
+        shift = {2.5, -1.0},
+        size = 2,
+        intensity = 0.5,
+        add_perspective = true
+      }
+    },
     pictures =
     {
       priority = "very-low",
@@ -156,7 +168,7 @@ data:extend({
         sound =
         {
           {
-            filename = "__base__/sound/train-breaks.ogg",
+            filename = "__BulletBillTrain__/sound/stop.ogg",
             volume = 0.6
           },
         }
@@ -164,12 +176,12 @@ data:extend({
     },
     drive_over_tie_trigger = drive_over_tie(),
     tie_distance = 50,
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.85 },
     working_sound =
     {
       sound =
       {
-        filename = "__base__/sound/train-engine.ogg",
+        filename = "__BulletBillTrain__/sound/engine.ogg",
         volume = 0.4
       },
       match_speed_to_activity = true,
