@@ -13,9 +13,9 @@ data:extend({
     selection_box = {{-0.85, -2.6}, {0.9, 2.5}},
     drawing_box = {{-1, -4}, {1, 3}},
     weight = 1000,
-    max_speed = 1.2,
-    max_power = "600kW",
-    braking_force = 10,
+    max_speed = 2.4,
+    max_power = "3000kW",
+    braking_force = 20,
     friction_force = 0.0015,
     -- this is a percentage of current speed that will be subtracted
     air_resistance = 0.002,
@@ -53,8 +53,8 @@ data:extend({
     energy_source =
     {
       type = "burner",
-      effectivity = 1,
-      fuel_inventory_size = 3,
+      effectivity = 0.5,
+      fuel_inventory_size = 4,
       smoke =
       {
         {
