@@ -6,3 +6,6 @@ It's intended to make crossing the tracks on a yellow signal that little bit mor
 
 * 3D model acquired under CC BY-NC-ND 3.0 licence.
 
+Mod released on factoriomods.com:
+
+* http://www.factoriomods.com/mods/bullet-bill-train
